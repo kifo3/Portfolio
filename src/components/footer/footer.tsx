@@ -11,7 +11,7 @@ const Footer = () => {
             sx={{display: 'flex', 
                 justifyContent: 'space-between', 
                 alignItems: 'center', 
-                backgroundColor: 'primary.dark', 
+                backgroundColor: '#0a1128', 
                 color: 'white'
             }}    
         >

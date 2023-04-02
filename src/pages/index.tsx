@@ -1,4 +1,5 @@
-import { Button } from "@mui/material";
+import { Box } from "@mui/system";
+import { Content, Hero, Sidebar } from "../components";
 import Layout from "../layout/layout";
 
 const IndexPage = () => {
@@ -6,7 +7,11 @@ const IndexPage = () => {
     
     <>
     <Layout>
-      <Button>Click</Button>
+      <Hero />
+      <Box sx={{ display: 'flex', gap: '20px', flexDirection: { xs: 'column', md: 'row'}, padding: '20px'}}>
+        <Sidebar />
+        <Content />
+      </Box>
     </Layout>
       
     </>
