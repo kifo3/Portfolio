@@ -14,6 +14,7 @@ export const BlogsService = {
                   slug
                   title
                   description {
+                    html
                     text
                   }
                   author {
@@ -48,6 +49,7 @@ export const BlogsService = {
                   excerpt
                   createdAt
                   description {
+                    html
                     text
                   }
                   image {
@@ -109,5 +111,39 @@ export const BlogsService = {
 
       const result = await request<{ blog: BlogsType[] }>(graphqlAPI, query, { slug });
       return result.blog;
+    },
+
+    async getDetailedCategoriesBlog(slug: String) {
+      const query = gql`
+        query getCategoriesBlog($slug: String!) {
+          blogs(where: { category: { slug: $slug }}) {
+            id
+            excerpt
+            slug
+            title
+            description {
+              html
+              text
+            }
+            author {
+              name
+              avatar {
+                url
+              }
+            }
+            category {
+              label
+              slug
+            }
+            image {
+              url
+            }
+            createdAt
+          }
+        }
+      `;
+
+      const result = await request<{blogs: BlogsType[]}>(graphqlAPI, query, {slug});
+      return result.blogs;
     }
 }

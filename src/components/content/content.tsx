@@ -1,4 +1,4 @@
-import { Avatar, Box, Divider, Typography } from "@mui/material";
+import { Avatar, Box, Button, Divider, Typography } from "@mui/material";
 import Image from "next/image";
 import { format } from "date-fns";
 import { ContentProps } from "./content.props";
@@ -31,11 +31,15 @@ const Content = ({blogs}: ContentProps) => {
 					</Typography>
 					<Divider sx={{marginTop:'30px'}} />
 					<Box sx={{display: 'flex', gap: '10px', marginTop: '10px'}}>
-						<Avatar alt={item.author.name} src={item.author.avatar.url} />
-						<Box>
-							<Typography>{item.author.name}</Typography>
-							<Box color={'grey'}>{format(new Date(item.createdAt), 'dd MMM yyyy')} &#x2022; {calculateEstimatedTimeToRead(item.description.text)} min read </Box>
-						</Box>
+						
+							<Avatar alt={item.author.name} src={item.author.avatar.url} />
+							<Box>
+								<Typography>{item.author.name}</Typography>
+								<Box color={'grey'}>{format(new Date(item.createdAt), 'dd MMM yyyy')} &#x2022; {calculateEstimatedTimeToRead(item.description.html)} min read </Box>
+							</Box>
+						
+						
+						
 					</Box>
                 </Box>
             ))}

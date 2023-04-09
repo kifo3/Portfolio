@@ -6,11 +6,15 @@ import { GetServerSideProps } from "next";
 import Image from "next/image";
 import { format } from 'date-fns'
 import { calculateEstimatedTimeToRead } from "@/src/helpers/time.format";
+import { useRouter } from "next/router";
+import SEO from "@/src/layout/seo/seo";
 
 const DetailedBlogsPage = ({blog, latestBlogs, categories}: DetailedBlogsPage) => {
+    const router = useRouter();
    
     return(
-        <Layout>
+        <SEO metaTitle={`${router.query.slug}-blog`}>
+            <Layout>
             <Box sx={{ display: 'flex', gap: '20px', flexDirection: { xs: 'column', md: 'row'}, padding: '20px'}}>
             <Box width={{ xs: '100%', md: '65%'}}>
                 <Box 
@@ -46,6 +50,8 @@ const DetailedBlogsPage = ({blog, latestBlogs, categories}: DetailedBlogsPage) =
             <Sidebar latestBlogs={latestBlogs} categories={categories} />
             </Box>
         </Layout>
+        </SEO>
+        
     )
 }
 

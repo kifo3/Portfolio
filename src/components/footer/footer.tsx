@@ -1,7 +1,7 @@
 import { Box, ButtonGroup, Button, Typography } from "@mui/material";
 import TelegramIcon from '@mui/icons-material/Telegram';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
+import GitHubIcon from '@mui/icons-material/GitHub';;
+import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';;
 import { format } from "date-fns";
 
 const Footer = () => {
@@ -20,8 +20,8 @@ const Footer = () => {
             </Typography>
             <Box sx={{display: 'flex', gap: '15px'}}>
               <TelegramIcon />
-              <InstagramIcon />
-              <YouTubeIcon />
+              <GitHubIcon />
+              <OndemandVideoIcon />
             </Box>
         </Box>
     )
