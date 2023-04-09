@@ -2,8 +2,12 @@ import { Avatar, Box, Divider, Typography } from "@mui/material";
 import Image from "next/image";
 import { format } from "date-fns";
 import { ContentProps } from "./content.props";
+import { calculateEstimatedTimeToRead } from "@/src/helpers/time.format";
+import { useRouter } from "next/router";
 
 const Content = ({blogs}: ContentProps) => {
+	const router = useRouter();
+
     return (
         <Box width={{ xs: '100%', md: '65%'}}>
             {blogs.map(item => (
@@ -13,7 +17,9 @@ const Content = ({blogs}: ContentProps) => {
                     borderRadius: '8px', 
                     boxShadow: '0px 8px 16px rgba(255, 255, 255, .1)', 
                     marginTop:'5px' 
-                }}>
+                }}
+				onClick={()=> router.push(`blog/${item.slug}`)}
+				>
                     <Box position={'relative'} width={'100%'} height={{ xs: '30vh', md: '50vh'}}>
 						<Image fill src={item.image.url} alt={item.title} style={{objectFit:'cover', borderRadius: '10px'}} />
 					</Box>
@@ -28,7 +34,7 @@ const Content = ({blogs}: ContentProps) => {
 						<Avatar alt={item.author.name} src={item.author.avatar.url} />
 						<Box>
 							<Typography>{item.author.name}</Typography>
-							<Box color={'grey'}>{format(new Date(item.createdAt), 'dd MMM yyyy')} </Box>
+							<Box color={'grey'}>{format(new Date(item.createdAt), 'dd MMM yyyy')} &#x2022; {calculateEstimatedTimeToRead(item.description.text)} min read </Box>
 						</Box>
 					</Box>
                 </Box>

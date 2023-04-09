@@ -8,7 +8,7 @@ export interface BlogsType {
     }
     createdAt: Date;
     description: {
-      text: string;
+      html: string;
     };
     author: {
       name:string;
