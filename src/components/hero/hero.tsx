@@ -59,24 +59,3 @@ const Hero = ({blogs}: HeroProps) => {
 
 export default Hero;
 
-const data = [
-    {
-		image: 'https://media.graphassets.com/MxJZhmooRRuudoErkQ38',
-		title: 'My Blogs with Hygraph',
-		exerpt: 'Get started with your SEO implementation when using a Headless CMS',
-		author: {
-			name: 'Maftuna Boborakhimova',
-			image: 'https://media.graphassets.com/ETvvAaHFTjGtXVBdjKGc',
-		},
-	},
-	{
-		image: 'https://media.graphassets.com/bh3K2NNtTHCN260Xfq9h',
-		title: 'Union Types and Sortable Relations with Hygraph',
-		exerpt: 'Learn more about Polymorphic Relations and Sortable Relations with Hygraph',
-		author: {
-			name: 'Maftuna Boborakhimova',
-			image: 'https://media.graphassets.com/ETvvAaHFTjGtXVBdjKGc',
-		},
-	},
-	
-]

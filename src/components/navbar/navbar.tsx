@@ -1,9 +1,9 @@
-import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import { navItems } from "@/src/config/constants";
-import SchoolIcon from '@mui/icons-material/School';
-import { useRouter } from "next/router";
+import TerminalIcon from '@mui/icons-material/Terminal';import { useRouter } from "next/router";
+
 
 interface Props {
     /**
@@ -29,14 +29,15 @@ const Navbar = ({window}: Props) => {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
           <Box sx={{ my: 2, display: "flex", alignItems: "center", gap: "5px" }}>
-            <SchoolIcon />
-            <Typography variant="h6">Kifoo</Typography>
+            
+            <TerminalIcon />
+            <Typography variant="h5" fontFamily={'fantasy'}>Kifoo</Typography>
           </Box>
           <Divider />
           <List>
             {navItems.map((item) => (
               <ListItem key={item.route} disablePadding>
-                <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemButton onClick={() => router.push(item.route)}  sx={{ textAlign: 'center', cursor: 'pointer', fontSize: '20px' }}>
                   <ListItemText primary={item.label} />
                 </ListItemButton>
               </ListItem>
@@ -59,7 +60,7 @@ const Navbar = ({window}: Props) => {
                         <MenuIcon />
                       </IconButton>
                       <Box sx={{ my: 2, alignItems: "center", gap: "5px", flexGrow: 1, display: { xs: 'none', sm: 'flex' }  }}>
-                        <SchoolIcon />
+                        <TerminalIcon />
                         <Typography variant="h6" component="div">
                         Kifoo
                         </Typography>

@@ -1,7 +1,7 @@
 import { Content, Sidebar } from "@/src/components";
 import Layout from "@/src/layout/layout";
 import { BlogsService } from "@/src/services/blog-services";
-import { Avatar, Box, Divider, Typography } from "@mui/material";
+import { Avatar, Box, Divider, Link, Typography } from "@mui/material";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import { format } from 'date-fns'
@@ -11,6 +11,7 @@ import SEO from "@/src/layout/seo/seo";
 
 const DetailedBlogsPage = ({blog, latestBlogs, categories}: DetailedBlogsPage) => {
     const router = useRouter();
+    const routeLink = useRouter();
    
     return(
         <SEO metaTitle={`${router.query.slug}-blog`}>
@@ -43,9 +44,13 @@ const DetailedBlogsPage = ({blog, latestBlogs, categories}: DetailedBlogsPage) =
                     <Typography variant="h5" color={'grey'} marginTop={'5px'}>
                         {blog.excerpt}
                     </Typography>
+                    <Link sx={{fontSize: '20px', cursor: 'pointer'}} onClick={() => routeLink.push(`${blog.link.link}`)} underline="hover">
+  						Link {blog.slug}
+				    </Link>
                     <Divider />
                     <div style={{opacity: '.8'}} dangerouslySetInnerHTML={{__html: blog.description.html}} />
                 </Box>
+                
             </Box>
             <Sidebar latestBlogs={latestBlogs} categories={categories} />
             </Box>

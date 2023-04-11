@@ -6,6 +6,9 @@ export interface BlogsType {
     image: {
       url: string;
     }
+    link: {
+      link: string;
+    }
     createdAt: Date;
     description: {
       html: string;

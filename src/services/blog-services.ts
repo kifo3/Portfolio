@@ -17,6 +17,9 @@ export const BlogsService = {
                     html
                     text
                   }
+                  link {
+                    link
+                  }
                   author {
                     name
                     avatar {
@@ -55,6 +58,7 @@ export const BlogsService = {
                   image {
                     url
                   }
+                  
                   author {
                     name
                     avatar {
@@ -99,6 +103,9 @@ export const BlogsService = {
             image {
               url
             }
+            link {
+              link
+            }
             author {
               name
               avatar {
@@ -124,6 +131,9 @@ export const BlogsService = {
             description {
               html
               text
+            }
+            link {
+              link
             }
             author {
               name

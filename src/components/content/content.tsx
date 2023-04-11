@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Divider, Typography } from "@mui/material";
+import { Avatar, Box, Button, Divider, Link, Typography } from "@mui/material";
 import Image from "next/image";
 import { format } from "date-fns";
 import { ContentProps } from "./content.props";
@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 const Content = ({blogs}: ContentProps) => {
 	const router = useRouter();
+	const routeLink = useRouter()
 
     return (
         <Box width={{ xs: '100%', md: '65%'}}>
@@ -41,6 +42,9 @@ const Content = ({blogs}: ContentProps) => {
 						
 						
 					</Box>
+					<Link sx={{fontSize: '20px', cursor: 'pointer'}} onClick={() => routeLink.push(`${item.link.link}`)} underline="hover">
+  						Link {item.slug}
+					</Link>
                 </Box>
             ))}
         </Box>
