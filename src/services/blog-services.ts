@@ -58,7 +58,9 @@ export const BlogsService = {
                   image {
                     url
                   }
-                  
+                  link {
+                    link
+                  }
                   author {
                     name
                     avatar {
@@ -104,6 +106,9 @@ export const BlogsService = {
               avatar {
                 url
               }
+            }
+            link {
+              link
             }
             category {
               label
