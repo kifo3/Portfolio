@@ -122,7 +122,7 @@ export const BlogsService = {
 
     async getDetailedCategoriesBlog(slug: String) {
       const query = gql`
-        query getCategoriesBlog($slug: String!) {
+        query GetCategoriesBlog($slug: String!) {
           blogs(where: { category: { slug: $slug }}) {
             id
             excerpt
