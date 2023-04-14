@@ -60,7 +60,7 @@ const DetailedBlogsPage = ({ blog, latestBlogs, categories }: DetailedBlogsPageP
 export default DetailedBlogsPage;
 
 export const getServerSideProps: GetServerSideProps<DetailedBlogsPageProps> = async ({ query }) => {
-	const blog = await BlogsService.getDetalidBlogs(query.slug as string);
+	const blog = await BlogsService.getDetailedBlogs(query.slug as string);
 	const latestBlogs = await BlogsService.getLatestBlog();
 	const categories = await BlogsService.getCategories();
 
