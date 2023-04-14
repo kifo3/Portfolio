@@ -14,7 +14,7 @@ import { GetServerSideProps } from 'next';
 
 const DetailedBlogsPage = ({ blog, latestBlogs, categories }: DetailedBlogsPageProps) => {
 	return (
-		`{blog.map(item => (
+		{blog.map(item => (
 			<SEO metaTitle={item.title}>
 			<Layout>
 				<Box sx={{ display: 'flex', gap: '20px', flexDirection: { xs: 'column', md: 'row' }, padding: '20px' }}>
@@ -55,7 +55,7 @@ const DetailedBlogsPage = ({ blog, latestBlogs, categories }: DetailedBlogsPageP
 				</Box>
 			</Layout>
 		</SEO>
-		))}`
+		))}
 		
 	);
 };
