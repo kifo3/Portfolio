@@ -1,5 +1,6 @@
 import { request, gql } from 'graphql-request';
 import { BlogsType } from '../interfaces/blogs-interface';
+import { HerosType } from '../interfaces/heros-interface';
 import { CategoryType } from '../interfaces/categories.interface';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT as string;
@@ -42,6 +43,33 @@ export const BlogsService = {
         const result = await request<{blogs: BlogsType[]}>(graphqlAPI, query);
         return result.blogs;
     },
+    async getHeros() {
+      const query = gql `
+        query GetHeros {
+          blogs {
+            heros {
+              id
+              title
+              image {
+                url
+              }
+              author {
+                name
+                avatar {
+                  url
+                }
+              }
+            }
+          }
+        }
+      `;
+
+      const result = await request<{blogs: HerosType[]}>(graphqlAPI, query);
+      return result.blogs;
+      console.log(result.blogs);
+      
+    },
+
     async getLatestBlog() {
       const query = gql `
             query GetLatestBlog {
