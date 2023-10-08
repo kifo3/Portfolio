@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import { navItems } from "@/src/config/constants";
@@ -28,10 +28,10 @@ const Navbar = ({window}: Props) => {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-          <Box sx={{ my: 2, display: "flex", alignItems: "center", gap: "5px" }}>
+          <Box sx={{ my: 2, display: 'flex', alignItems: 'center', gap: '5px' }}>
             
             <TerminalIcon />
-            <Typography variant="h5" fontFamily={'fantasy'}>Kifoo</Typography>
+            <Typography variant='h5' fontFamily={'fantasy'}>Kifoo</Typography>
           </Box>
           <Divider />
           <List>
@@ -48,20 +48,20 @@ const Navbar = ({window}: Props) => {
 
     return (
         <Box height={'10vh'} sx={{ display: 'flex' }}>
-            <AppBar sx={{height: '10vh', background: '#2b2d42'}} component="nav">
+            <AppBar sx={{height: '10vh', background: '#2b2d42'}} component='nav'>
                 <Toolbar>
                     <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
+                        color='inherit'
+                        aria-label='open drawer'
+                        edge='start'
                         onClick={handleDrawerToggle}
                         sx={{ mr: 2, display: { sm: 'none' } }}
                       >
                         <MenuIcon />
                       </IconButton>
-                      <Box sx={{ my: 2, alignItems: "center", gap: "5px", flexGrow: 1, display: { xs: 'none', sm: 'flex' }  }}>
+                      <Box sx={{ my: 2, alignItems: 'center', gap: '5px', flexGrow: 1, display: { xs: 'none', sm: 'flex' }  }}>
                         <TerminalIcon />
-                        <Typography variant="h6" component="div">
+                        <Typography variant='h6'>
                         Kifoo
                         </Typography>
                       </Box>
@@ -75,10 +75,10 @@ const Navbar = ({window}: Props) => {
                       </Box>
                 </Toolbar>
             </AppBar>
-            <Box component="nav">
+            <Box component='nav'>
                 <Drawer
                   container={container}
-                  variant="temporary"
+                  variant='temporary'
                   open={mobileOpen}
                   onClose={handleDrawerToggle}
                   ModalProps={{

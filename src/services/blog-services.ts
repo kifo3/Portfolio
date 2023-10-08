@@ -43,32 +43,31 @@ export const BlogsService = {
         const result = await request<{blogs: BlogsType[]}>(graphqlAPI, query);
         return result.blogs;
     },
-    async getHeros() {
-      const query = gql `
-        query GetHeros {
-          blogs {
-            heros {
-              id
-              title
-              image {
-                url
-              }
-              author {
-                name
-                avatar {
-                  url
-                }
-              }
-            }
-          }
-        }
-      `;
+    // async getHeros() {
+    //   const query = gql `
+    //     query GetHeros {
+    //       blogs {
+    //         heros {
+    //           id
+    //           title
+    //           image {
+    //             url
+    //           }
+    //           author {
+    //             name
+    //             avatar {
+    //               url
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //   `;
 
-      const result = await request<{blogs: HerosType[]}>(graphqlAPI, query);
-      return result.blogs;
-      console.log(result.blogs);
+    //   const result = await request<{blogs: HerosType[]}>(graphqlAPI, query);
+    //   return result.blogs;
       
-    },
+    // },
 
     async getLatestBlog() {
       const query = gql `
