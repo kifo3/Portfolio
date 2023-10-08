@@ -1,6 +1,4 @@
-import { Box, Typography } from "@mui/material";
-
-import 'react-multi-carousel/lib/styles.css';
+import { Box, Typography } from "@mui/material"
 import Image from "next/image";
 
 const Hero = () => {
