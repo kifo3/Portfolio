@@ -14,7 +14,7 @@ const Hero = () => {
 					zIndex={999} 
 					sx={{top: '50%', paddingLeft: {xs: '10px', md: '50px'}, transform: 'translateY(-50%)'}}
 				>
-								<Typography fontFamily={'fantasy'} sx={{fontSize: { xs: '30px', md: '50px'}}} variant='h2'>I`am MaftunaB</Typography>
+								<Typography fontFamily={'fantasy'} sx={{fontSize: { xs: '30px', md: '50px'}}} variant='h2'>I am MaftunaB</Typography>
 								<Typography fontFamily={'fantasy'} sx={{fontSize: { xs: '30px', md: '50px'}}} variant='h2' >Full Stack Software Developer</Typography>
 
 				</Box>
